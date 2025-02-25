@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reverse Bidding | MyOnlineMeal.com</title>
+    <link rel="stylesheet" href="reverse-bidding.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <img src="logo.png" alt="MyOnlineMeal Logo">
+        </div>
+        <ul>
+            <li class="item"><a href="index.html">Home</a></li>
+            <li class="item"><a href="reverse-bidding.html">Reverse Bidding</a></li>
+            <li class="item"><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section id="bidding-section">
+        <h1>Reverse Bidding for Food Items</h1>
+        <p>Place your bid for your favorite food item!</p>
+
+        <div id="food-items">
+            <div class="food-item">
+                <h2>Pizza</h2>
+                <p>Current Best Bid: <span class="current-bid" data-item="pizza">₹200</span></p>
+                <input type="number" placeholder="Your Bid" class="bid-input" data-item="pizza">
+                <button class="bid-button" data-item="pizza">Place Bid</button>
+            </div>
+            <div class="food-item">
+                <h2>Burger</h2>
+                <p>Current Best Bid: <span class="current-bid" data-item="burger">₹150</span></p>
+                <input type="number" placeholder="Your Bid" class="bid-input" data-item="burger">
+                <button class="bid-button" data-item="burger">Place Bid</button>
+            </div>
+            <div class="food-item">
+                <h2>Pasta</h2>
+                <p>Current Best Bid: <span class="current-bid" data-item="pasta">₹180</span></p>
+                <input type="number" placeholder="Your Bid" class="bid-input" data-item="pasta">
+                <button class="bid-button" data-item="pasta">Place Bid</button>
+            </div>
+        </div>
+
+        <div id="message" class="message"></div>
+    </section>
+
+    <footer>
+        <div class="center">
+            Copyright &copy; 2025 www.MyOnlineMeal.com. All rights reserved!
+        </div>
+    </footer>
+
+    <script src="reverse-bidding.js"></script>
+</body>
+
+</html>

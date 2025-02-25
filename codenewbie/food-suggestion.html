@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Food Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h2 {
+            color: #333;
+        }
+        button {
+            padding: 12px 20px;
+            font-size: 20px;
+            margin-top: 10px;
+            
+            cursor: pointer;
+            background: #ff7b00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #e66b00;
+        }
+        .suggestion-box {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            background: #fff;
+            width: 60%;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .emoji {
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🍽 Smart Food Suggestions Based on Season</h2>
+    <button onclick="getFoodSuggestion()">Get Food Suggestion</button>
+
+    <div id="foodSuggestion" class="suggestion-box"></div>
+
+    <script>
+        function getFoodSuggestion() {
+            const date = new Date();
+            const month = date.getMonth(); // 0 (Jan) to 11 (Dec)
+            const hour = date.getHours(); // 0 to 23
+
+            let season = "Summer";
+            if (month >= 2 && month <= 4) season = "Spring";
+            else if (month >= 5 && month <= 8) season = "Monsoon";
+            else if (month >= 9 && month <= 11) season = "Winter";
+
+            let timeOfDay = "Morning";
+            if (hour >= 12 && hour < 17) timeOfDay = "Afternoon";
+            else if (hour >= 17 && hour < 21) timeOfDay = "Evening";
+            else if (hour >= 21 || hour < 5) timeOfDay = "Night";
+
+            const foodSuggestions = {
+                Summer: ["🍉 Watermelon Juice", "🥗 Salad", "🍦 Ice Cream", "🥭 Mango Shake"],
+                Monsoon: ["🍵 Tea & Pakoras", "🌮 Samosas", "🍜 Hot Noodles", "🥔 Aloo Tikki"],
+                Winter: ["🍲 Hot Soup", "☕ Hot Chocolate", "🍛 Spicy Curry", "🥟 Momos"],
+                Spring: ["🍍 Fresh Juice", "🥑 Smoothies", "🍕 Light Pizza", "🥗 Fresh Salad"]
+            };
+
+            const food = foodSuggestions[season][Math.floor(Math.random() * foodSuggestions[season].length)];
+
+            let suggestionBox = document.getElementById("foodSuggestion");
+            suggestionBox.innerHTML = `<h3>Suggested Food: ${food}</h3>
+                                       <p>Season: ${season} | Time: ${timeOfDay}</p>
+                                       <button onclick="getFoodSuggestion()">Suggest Another Dish</button>`;
+            suggestionBox.classList.add("show");
+        }
+    </script>
+
+</body>
+</html>

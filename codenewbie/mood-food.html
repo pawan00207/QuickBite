@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Food Suggestions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        .mood-btn {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .happy { background-color: #ffcc00; }
+        .stressed { background-color: #ff5733; color: white; }
+        .tired { background-color: #3498db; color: white; }
+        .suggestions {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>How Are You Feeling? 🤔</h2>
+        <button class="mood-btn happy" onclick="showSuggestions('happy')">😊 Happy</button>
+        <button class="mood-btn stressed" onclick="showSuggestions('stressed')">😩 Stressed</button>
+        <button class="mood-btn tired" onclick="showSuggestions('tired')">😴 Tired</button>
+
+        <h3>Recommended Food 🍽️</h3>
+        <div id="food-suggestions" class="suggestions"></div>
+    </div>
+
+    <script>
+        function showSuggestions(mood) {
+            let suggestions = {
+                happy: ["Pizza 🍕", "Ice Cream 🍦", "BBQ 🍖"],
+                stressed: ["Chocolate 🍫", "Burger 🍔", "Fries 🍟"],
+                tired: ["Coffee ☕", "Salad 🥗", "Smoothie 🍹"]
+            };
+
+            let foodList = suggestions[mood].map(food => `<p>${food}</p>`).join("");
+            document.getElementById("food-suggestions").innerHTML = foodList;
+        }
+    </script>
+
+</body>
+</html>

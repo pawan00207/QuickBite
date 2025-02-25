@@ -1,0 +1,1220 @@
+/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Variables */
+:root {/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Variables */
+:root {
+    --primary-color: #ff6347;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --dark-color: #222;
+    --border-radius: 12px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.center {
+    word-wrap:calc(10, 2);
+}
+
+#logo img {
+    height: 50px;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    background: url('food.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#searchBox {
+    padding: 10px;
+    width: 70%;
+    max-width: 400px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #e0523d;
+}
+
+/* Services Section */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 5%;
+    background: var(--light-color);
+}
+
+.services div {
+    padding: 15px;
+}
+
+.box {
+    width: 300px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.box h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.box p {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Improved Add to Cart Button for Better UI/UX */
+.add-to-cart {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 12px 24px; /* More padding for better touch target */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-to-cart:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Cart Section */
+#cart-section {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+#cart {
+    list-style: none;
+    margin: 20px 0;
+}
+
+#cart li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Client Section */
+#client-section {
+    background: var(--light-color);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-item img {
+    width: 150px; /* Equal width */
+    height: 100px; /* Equal height */
+    object-fit: contain; /* Maintain aspect ratio without distortion */
+    display: block;
+    margin: 0 auto; /* Center logos */
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 5%;
+    background: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+
+#contact-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    #clients {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    #searchBox {
+        width: 90%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .client-item img {
+        width: 70px;
+    }
+}
+ /* Animation for the "Cook With Me" Box */
+.cook-with-me-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Button hover effect */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}/* CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    font-family: 'Bree Serif', serif;
+}
+
+/* Variables */
+:root {
+    --primary-color: #ff6347;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --dark-color: #222;
+    --border-radius: 12px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.center {
+    word-wrap:calc(10, 2);
+}
+
+#logo img {
+    height: 50px;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    background: url('food.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#searchBox {
+    padding: 10px;
+    width: 70%;
+    max-width: 400px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #e0523d;
+}
+
+/* Services Section */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 5%;
+    background: var(--light-color);
+}
+
+.services div {
+    padding: 15px;
+}
+
+.box {
+    width: 300px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.box h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.box p {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Improved Add to Cart Button for Better UI/UX */
+.add-to-cart {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 12px 24px; /* More padding for better touch target */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-to-cart:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Cart Section */
+#cart-section {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+#cart {
+    list-style: none;
+    margin: 20px 0;
+}
+
+#cart li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Client Section */
+#client-section {
+    background: var(--light-color);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-item img {
+    width: 150px; /* Equal width */
+    height: 100px; /* Equal height */
+    object-fit: contain; /* Maintain aspect ratio without distortion */
+    display: block;
+    margin: 0 auto; /* Center logos */
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 5%;
+    background: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+
+#contact-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    #clients {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    #searchBox {
+        width: 90%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .client-item img {
+        width: 70px;
+    }
+}
+ /* Animation for the "Cook With Me" Box */
+.cook-with-me-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Button hover effect */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+/* Message Animation */
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.food-swap-box {
+    background: #fffbcc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    margin: 20px auto;
+    width: 350px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Message Animation */
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.food-swap-box {
+    background: #fffbcc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    margin: 20px auto;
+    width: 350px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.message {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    opacity: 1;
+    transition: color 0.3s ease-in-out;
+}
+    --primary-color: #ff6347;
+    --secondary-color: #333;
+    --light-color: #f4f4f4;
+    --dark-color: #222;
+    --border-radius: 12px;
+}
+
+/* Navigation Bar */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background-color: var(--dark-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.center {
+    word-wrap:calc(10, 2);
+}
+
+#logo img {
+    height: 50px;
+}
+
+#navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+#navbar ul li a {
+    color: white;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#navbar ul li a:hover {
+    background-color: var(--primary-color);
+}
+
+/* Home Section */
+#home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 80vh;
+    background: url('food.jpg') no-repeat center center/cover;
+    color: white;
+}
+
+#home h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+#home p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+#searchBox {
+    padding: 10px;
+    width: 70%;
+    max-width: 400px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    background: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #e0523d;
+}
+
+/* Services Section */
+#services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 5%;
+    background: var(--light-color);
+}
+
+.services div {
+    padding: 15px;
+}
+
+.box {
+    width: 300px;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    text-align: center;
+    background: white;
+    transition: transform 0.3s;
+}
+
+.box:hover {
+    transform: translateY(-10px);
+}
+
+.box img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.box h2 {
+    margin: 10px 0;
+    font-size: 1.5rem;
+}
+
+.box p {
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+/* Improved Add to Cart Button for Better UI/UX */
+.add-to-cart {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    font-size: 16px; /* Slightly larger font */
+    font-weight: bold;
+    border: none;
+    border-radius: 12px; /* Rounded corners */
+    padding: 12px 24px; /* More padding for better touch target */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart:hover {
+    background-color: #45a049; /* Darker green on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.add-to-cart:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: translateY(2px); /* Pressed effect */
+}
+
+/* Cart Section */
+#cart-section {
+    text-align: center;
+    padding: 50px 5%;
+}
+
+#cart {
+    list-style: none;
+    margin: 20px 0;
+}
+
+#cart li {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+/* Client Section */
+#client-section {
+    background: var(--light-color);
+    padding: 50px 5%;
+    text-align: center;
+}
+
+#clients {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.client-item img {
+    width: 150px; /* Equal width */
+    height: 100px; /* Equal height */
+    object-fit: contain; /* Maintain aspect ratio without distortion */
+    display: block;
+    margin: 0 auto; /* Center logos */
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 50px 5%;
+    background: var(--dark-color);
+    color: white;
+    text-align: center;
+}
+
+#contact-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 20px 5%;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    html {
+        font-size: 14px;
+    }
+
+    #navbar {
+        flex-direction: column;
+    }
+
+    #navbar ul {
+        margin-top: 10px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #home {
+        height: 60vh;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    #clients {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 12px;
+    }
+
+    #searchBox {
+        width: 90%;
+    }
+
+    .btn {
+        width: 90%;
+    }
+
+    .client-item img {
+        width: 70px;
+    }
+}
+ /* Animation for the "Cook With Me" Box */
+.cook-with-me-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+    font-size: 18px;
+    margin: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Button hover effect */
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.1);
+}
+
+/* Message Animation */
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+.food-swap-box {
+    background: #fffbcc;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    margin: 20px auto;
+    width: 350px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animation for smooth appearance */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.message {
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+
+#voice-order-section { /* New Section for Voice Order */
+    text-align: center; /* Center the content */
+    padding: 20px; /* Add some padding */
+}
+
+#voice-order-section h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Space below the heading */
+}
+
+#orderInput {
+    width: 80%; /* Make input wider */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 16px;
+}
+
+#voice-order-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Example color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#confirmation {
+    margin-top: 10px;
+}
+#confirmation button {
+    background-color: #28a745; /* Green */
+    color: white;
+}
+
+.chatbox {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+}
+
+.messages {
+    height: 200px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.messages p {
+    margin: 5px 0;
+}
+
+#userInput {
+    width: calc(100% - 60px);
+    padding: 10px;
+}
+
+#sendButton {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#sendButton:hover {
+    background-color: #218838;
+}

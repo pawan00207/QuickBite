@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin & Win</title>
+    <style>
+        .wheel-container {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .wheel {
+            width: 100%;
+            height: 100%;
+            background: conic-gradient(#ff0000 0deg 60deg, #ffff00 60deg 120deg, #008000 120deg 180deg, #0000ff 180deg 240deg, #800080 240deg 300deg, #ff4500 300deg 360deg);
+            border-radius: 50%;
+            transition: transform 3s ease-out;
+        }
+
+        .spin-btn {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #ff5733;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wheel-container">
+        <div class="wheel" id="spinWheel"></div>
+    </div>
+    <button class="spin-btn" onclick="spinWheel()">Spin & Win</button>
+
+    <script>
+        function spinWheel() {
+            console.log("Spin button clicked!"); // Debugging log
+    
+            let rewards = ["10% Off", "Free Dessert", "₹50 Cashback", "20% Off", "No Luck! Try Again", "Free Delivery"];
+            let randomIndex = Math.floor(Math.random() * rewards.length);
+            let randomRotation = Math.floor(Math.random() * 3600) + 1800;
+    
+            console.log("Rotating to: " + randomRotation + " degrees"); // Debugging log
+    
+            let wheel = document.getElementById('spinWheel');
+            if (wheel) {
+                wheel.style.transition = "transform 3s ease-out"; // Ensures animation
+                wheel.style.transform = rotate(${randomRotation}deg);
+            } else {
+                console.error("Wheel element not found!");
+            }
+    
+            setTimeout(function () {
+                alert("Congratulations! You won: " + rewards[randomIndex]);
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

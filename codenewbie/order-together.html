@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Together</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        .cart-items {
+            margin-top: 20px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Order Together</h2>
+        <p>Share this link with friends:</p>
+        <input type="text" id="group-link" readonly>
+        <button onclick="generateLink()">Create Group Order</button>
+
+        <h3>Add Items to Cart</h3>
+        <input type="text" id="user-name" placeholder="Enter your name">
+        <input type="text" id="food-item" placeholder="Enter food name">
+        <input type="number" id="food-price" placeholder="Enter price">
+        <button onclick="addItem()">Add to Group Cart</button>
+
+        <h3>Group Cart</h3>
+        <div id="cart-list" class="cart-items"></div>
+        <h3>Total: ₹<span id="total-price">0</span></h3>
+    </div>
+
+    <script>
+        let groupId;
+
+        function generateLink() {
+            groupId = Math.random().toString(36).substring(2, 10);
+            localStorage.setItem("groupId", groupId);
+            document.getElementById("group-link").value = window.location.href + "?group=" + groupId;
+        }
+
+        function addItem() {
+            let name = document.getElementById("user-name").value;
+            let item = document.getElementById("food-item").value;
+            let price = document.getElementById("food-price").value;
+
+            if (!name || !item || !price) {
+                alert("Please enter your name, item name, and price!");
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem(groupId)) || [];
+            cart.push({ name, item, price });
+            localStorage.setItem(groupId, JSON.stringify(cart));
+            displayCart();
+        }
+
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem(groupId)) || [];
+            let cartList = document.getElementById("cart-list");
+            let totalPrice = 0;
+            cartList.innerHTML = "";
+
+            cart.forEach((food) => {
+                totalPrice += parseFloat(food.price);
+                cartList.innerHTML += `<p><strong>${food.name}</strong> added <strong>${food.item}</strong> - ₹${food.price}</p>`;
+            });
+
+            document.getElementById("total-price").innerText = totalPrice.toFixed(2);
+        }
+
+        window.onload = function() {
+            let params = new URLSearchParams(window.location.search);
+            groupId = params.get("group") || localStorage.getItem("groupId");
+
+            if (groupId) {
+                displayCart();
+                document.getElementById("group-link").value = window.location.href;
+            }
+        }
+    </script>
+
+</body>
+</html>
