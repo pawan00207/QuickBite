@@ -32,7 +32,7 @@ Version Control: Git & GitHub
 
 Clone the repository:
 
-git clone https://github.com/your-username/quick-bite.git
+git clone https://github.com/pawan00207/quick-bite.git
 
 Navigate to the project directory:
 
@@ -60,7 +60,7 @@ Submit a pull request for review.
 
 This project is licensed under the MIT License.
 
-📞 Contact
+📞 Contact-9170336663
 
 For any queries or contributions, feel free to reach out:
 
